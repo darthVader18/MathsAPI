@@ -3,7 +3,7 @@ from app import sum, difference, multiply, divide
 
 app = Flask(__name__)
 
-@app.route("/sum", methods=[ 'GET'])
+@app.route("/sum", methods=['POST', 'GET'])
 def addition():
     if request.method == 'POST':
         a = request.args.get('first')
@@ -33,10 +33,10 @@ def division():
 
 @app.route("/")
 def home():
-    return """For Addition go to \sum.\n
-    For Subtraction go to \difference.\n
-    For Multiplication go to \product.\n
-    For Division go to \divide."""
+    return """For Addition go to /sum.\n
+    For Subtraction go to /difference.\n
+    For Multiplication go to /product.\n
+    For Division go to /divide."""
 
 
 if __name__ == "__main__":
